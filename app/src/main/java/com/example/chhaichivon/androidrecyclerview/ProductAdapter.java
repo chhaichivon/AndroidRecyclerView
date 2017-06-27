@@ -1,3 +1,4 @@
+
 package com.example.chhaichivon.androidrecyclerview;
 
 import android.support.v7.widget.RecyclerView;
@@ -9,11 +10,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
 /**
  * Created by chhaichivon on 6/25/17.
  */
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> implements View.OnClickListener{
+
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
 
 	private List<Product> productsList;
 
@@ -32,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 	public void onBindViewHolder(ProductViewHolder holder, int position) {
 		Product product = productsList.get(position);
 		holder.mTextViewName.setText(product.getName());
-		holder.mTextViewPrice.setText((int) product.getPrice());
+		holder.mTextViewPrice.setText(product.getPrice());
 		holder.mTextViewDescription.setText(product.getDescription());
 	}
 
@@ -41,15 +44,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 		return productsList.size();
 	}
 
-	@Override
-	public void onClick(View v) {
-
-	}
 
 	public class ProductViewHolder extends RecyclerView.ViewHolder {
-		private TextView mTextViewName;
-		private TextView mTextViewPrice;
-		private TextView mTextViewDescription;
+		private TextView mTextViewName , mTextViewPrice ,mTextViewDescription;
 
 		public ProductViewHolder(View itemView) {
 			super(itemView);
@@ -59,3 +56,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 		}
 	}
 }
+
+
+
